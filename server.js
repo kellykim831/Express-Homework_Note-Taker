@@ -1,9 +1,7 @@
-const express = require("express");
-const app = express()
-const port = 3000
-
-app.use(express.static('public'))
-app.listen(port, () => {
-  console.log(`listening at http://localhost:${port}`)
-})
+// dependencies
+var express = require("express");
+var path = require("path");
+var fs = require("fs");
+var database = require("./db/db.json")
+const { v4: uuidv4 } = require('uuid');
 
