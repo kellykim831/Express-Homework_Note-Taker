@@ -28,3 +28,21 @@ app.get("/notes", function(req,res) {
 app.get("/api/notes", function(req, res) {
   res.sendFile(path.join(__dirname, "/db/db.json"));
 });
+
+// api/ notes
+app.get("/api/notes", function(req, res) {
+  res.sendFile(path.join(__dirname, "/db/db.json"));
+});
+
+// api/post
+app.post("/api/notes", function(req, res) {
+  var newNote = req.body;
+  let noteID = uuidv4();
+  newNote.id = noteID;
+  database.push(newNote);
+
+  fs.writeFile("./db/db.json", JSON.stringify(database), function(err){
+      if (err) throw err;
+      res.json("Response")
+  })
+});
