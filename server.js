@@ -46,3 +46,20 @@ app.post("/api/notes", function(req, res) {
       res.json("Response")
   })
 });
+
+// api/delete
+app.delete("/api/notes/:id", function(req,res) {
+  var ID = req.params.id
+  
+  for (var i = 0; i < database.length; i++) {
+      if (database[i].id === ID) {
+        database.splice(i,1);
+      }
+  }
+  fs.writeFile("./db/db.json", JSON.stringify(database), function(err){
+      if (err) throw err;
+      res.json("Reponse")
+  })
+});
+
+
