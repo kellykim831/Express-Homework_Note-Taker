@@ -43,7 +43,9 @@ The following platforms were required to build this website:
 * [UUID](https://www.uuidgenerator.net/)
 * [Express](http://expressjs.com/)
 
+## Deployed Link
 
+* [See Live Site](https://powerful-river-23113.herokuapp.com/)
  ## Authors
 
 * **Kelly Kim** 
