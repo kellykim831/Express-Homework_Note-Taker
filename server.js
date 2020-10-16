@@ -2,7 +2,7 @@
 var express = require("express");
 var path = require("path");
 var fs = require("fs");
-var database = require("./db/db.json")
+var database = require("./db/db.json");
 const { v4: uuidv4 } = require('uuid');
 
 // set up express
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 //index.html
-app.get("*", function(req,res) {
+app.get("/", function(req,res) {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
